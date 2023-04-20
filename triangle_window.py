@@ -11,26 +11,14 @@ def coordinates():
     splitted_text2 = text2.split(';')
     splitted_text3 = text3.split(';')
     points = [splitted_text1[0],splitted_text1[1],splitted_text2[0], splitted_text2[1],splitted_text3[0],splitted_text3[1]]
-    # x1 = float(splitted_text1[0])
-    # y1 = float(splitted_text1[1])
-    # x1y1=[]
-    #
-    x2 = float()
-    y2 = float()
-    # x2y2 = []
-    #
-    x3 = float()
-    y3 = float()
-    # x3y3=[]
-
-
-    # return x1,x2,x3,y1,y2,y3
+    return points
 
 def window2():
     window2 = Tk()
     window2.title('triangle')
     window2.geometry("1000x1000+700+500")
     window2.resizable(width=False, height=False)
+    print(coordinates())
 
 window = Tk()
 window.title('triangle')
@@ -63,7 +51,7 @@ btm_done.place(x=180,y=150, width=100, height=30)
 btm_escape= Button(window, bg='white', text='Закрыть', font=('Arial', 14), command = window.quit)
 
 btm_escape.place(x=290,y=150, width=100, height=30)
-# coordinates()
+
 
 
 

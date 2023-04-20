@@ -2,10 +2,10 @@ from tkinter import *
 from functions_triangle import*
 
 def show_result():
-    # Создаем окно с результатами
+    window.withdraw()
     result_window = Toplevel()
     result_window.title("Результат")
-    window.geometry("500x500+700+500")
+    result_window.geometry("500x500+700+500")
 
     text1 = entry1.get()
     text2 = entry2.get()
@@ -56,6 +56,7 @@ btm_done.place(x=180, y=150, width=100, height=30)
 
 btm_escape = Button(window, bg='white', text='Закрыть', font=('Arial', 14), command=window.quit)
 btm_escape.place(x=290, y=150, width=100, height=30)
+
 
 
 

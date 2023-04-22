@@ -21,6 +21,10 @@ def show_result():
     BC = side(x2, y2, x3, y3)
     AC = side(x1, y1, x3, y3)
 
+    angle_BAC = angle(AC, AB, BC)
+    angle_ABC = angle(AC, BC, AB)
+    angle_BCA = angle(AB, BC, AC)
+
     if (x1 == x2 == x3) or (y1 == y2 == y3):
         label1 = Label(result_window, text="Такого треугольника не существует!", font=("Arial", 14))
         label1.pack()
@@ -43,6 +47,16 @@ def show_result():
         label7.place(x=20, y=200)
         label8 = Label(result_window, text="Сторона АC: {}".format('%.2f' % AC), font=("Arial", 14))
         label8.place(x=20, y=230)
+
+        label9=Label(result_window, text="Углы треуголька:", font=("Arial", 14))
+        label9.place(x=260, y=20)
+        label6 = Label(result_window, text="Угол BAC: {}°".format('%.2f' % degrees(angle_BAC)), font=("Arial", 14))
+        label6.place(x=260, y=50)
+        label7 = Label(result_window, text="Угол ABC: {}°".format('%.2f' % degrees(angle_ABC)), font=("Arial", 14))
+        label7.place(x=260, y=80)
+        label8 = Label(result_window, text="Угол BCA: {}°".format('%.2f' % degrees(angle_BCA)), font=("Arial", 14))
+        label8.place(x=260, y=110)
+
     result_window.mainloop()
 
 

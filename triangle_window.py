@@ -17,16 +17,35 @@ def show_result():
     splitted_text3 = text3.split(';')
     x3, y3 = [float(splitted_text3[0]), float(splitted_text3[1])]
 
-    label1 = Label(result_window, text="Введённые координаты:", font=("Arial", 14))
-    label1.place(x=20, y=20)
-    label2 = Label(result_window, text="Точка А: ({},{})".format(x1, y1), font=("Arial", 14))
-    label2.place(x=20, y=50)
-    label3 = Label(result_window, text="Точка В: ({},{})".format(x2, y2), font=("Arial", 14))
-    label3.place(x=20, y=80)
-    label4 = Label(result_window, text="Точка С: ({},{})".format(x3, y3), font=("Arial", 14))
-    label4.place(x=20, y=110)
+    AB = side(x1, y1, x2, y2)
+    BC = side(x2, y2, x3, y3)
+    AC = side(x1, y1, x3, y3)
 
+    if (x1 == x2 == x3) or (y1 == y2 == y3):
+        label1 = Label(result_window, text="Такого треугольника не существует!", font=("Arial", 14))
+        label1.pack()
+
+    else:
+        label1 = Label(result_window, text="Введённые координаты:", font=("Arial", 14))
+        label1.place(x=20, y=20)
+        label2 = Label(result_window, text="Точка А: ({},{})".format(x1, y1), font=("Arial", 14))
+        label2.place(x=20, y=50)
+        label3 = Label(result_window, text="Точка В: ({},{})".format(x2, y2), font=("Arial", 14))
+        label3.place(x=20, y=80)
+        label4 = Label(result_window, text="Точка С: ({},{})".format(x3, y3), font=("Arial", 14))
+        label4.place(x=20, y=110)
+
+        label5 = Label(result_window, text="Длины сторон:", font=("Arial", 14))
+        label5.place(x=20, y=140)
+        label6 = Label(result_window, text="Сторона АВ: {}".format('%.2f' % AB), font=("Arial", 14))
+        label6.place(x=20, y=170)
+        label7 = Label(result_window, text="Сторона ВС: {}".format('%.2f' % BC), font=("Arial", 14))
+        label7.place(x=20, y=200)
+        label8 = Label(result_window, text="Сторона АC: {}".format('%.2f' % AC), font=("Arial", 14))
+        label8.place(x=20, y=230)
     result_window.mainloop()
+
+
 
 
 window = Tk()

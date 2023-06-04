@@ -1,4 +1,4 @@
-# Triangle
+# Triangle app
 ---
 ### О приложении / About
 ---
